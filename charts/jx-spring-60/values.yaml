@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 replicaCount: 1
 image:
-  repository: draft
-  tag: dev
+  repository: 10.101.64.159:5000/yrj2011/jx-spring-60
+  tag: 0.0.27
   pullPolicy: IfNotPresent
 
 # define environment variables here as a map of key: value
