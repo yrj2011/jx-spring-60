@@ -7,6 +7,7 @@ pipeline {
     APP_NAME = 'jx-spring-60'
     CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
    TILLER_NAMESPACE = "kube-system"
+
   }
   stages {
     stage('CI Build and push snapshot') {
@@ -17,6 +18,7 @@ pipeline {
         PREVIEW_VERSION = "0.0.0-SNAPSHOT-$BRANCH_NAME-$BUILD_NUMBER"
         PREVIEW_NAMESPACE = "$APP_NAME-$BRANCH_NAME".toLowerCase()
         HELM_RELEASE = "$PREVIEW_NAMESPACE".toLowerCase()
+        TILLER_NAMESPACE = "kube-system"
       }
       steps {
         container('maven') {
